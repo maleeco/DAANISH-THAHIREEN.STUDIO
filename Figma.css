@@ -69,10 +69,11 @@ nav a:hover {
 .hero {
   width: 100%;
   height: 600px; /* ajustable */
-  background-color: #000;
+  background-image: url(image/image6.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
 }
 
 /* Texte principal */
