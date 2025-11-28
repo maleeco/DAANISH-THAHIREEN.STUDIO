@@ -7,7 +7,7 @@
   
   body {
     font-family: IBM Plex Sans;
-    background-color:#ffffff;
+    background-color: #000000; /* ← CHANGEMENT : fond noir pour le body */
     color: #111;
   }
   
@@ -68,7 +68,7 @@
   /* Image principale */
   .hero {
     width: 100%;
-    height: 500px; /* ajustable */
+    height: 500px;
     background-color: #000;
     background-position: center;
     background-size: cover;
@@ -93,14 +93,7 @@
     color: #333;
   }
 
-body {
-  margin: 0;
-  font-family: "Helvetica", monospace;
-  color: #333;
-}
-
 /* -------- Bannière -------- */
-
 .banner {
   background: #7c7d58;
   color: #fff6e0;
@@ -119,9 +112,9 @@ body {
 }
 
 /* -------- Newsletter -------- */
-
 .newsletter {
   padding: 60px 30px;
+  background: #ffffff; /* ← AJOUT : fond blanc pour newsletter */
 }
 
 .newsletter h2 {
@@ -159,12 +152,12 @@ body {
 }
 
 /* -------- Columns section -------- */
-
 .links {
   display: flex;
   justify-content: space-around;
   padding: 50px 20px 80px;
   text-align: left;
+  background: #ffffff; /* ← AJOUT : fond blanc pour links */
 }
 
 .column {
@@ -186,7 +179,6 @@ body {
 }
 
 /* -------- Footer -------- */
-
 footer {
   background: #3b2414;
   padding: 25px 0;
@@ -203,10 +195,12 @@ footer {
   color: #ffffff;
 }
 
+/* -------- Container texte + image -------- */
 .container {
   display: flex;
   justify-content: space-between;
   padding: 60px 80px;
+  background: #ffffff; /* ← AJOUT : fond blanc pour container */
 }
 
 .text-block {
@@ -233,7 +227,7 @@ footer {
   object-fit: cover;
 }
 
-/* Bas en vert */
+/* -------- Footer texte vert -------- */
 .footer {
   background: #7c7d58;
   padding: 40px 60px;
@@ -253,18 +247,22 @@ footer {
   max-width: 900px;
 }
 
+/* -------- GALERIE PRINCIPALE (FRAME 3) -------- */
 .gallery-wrapper {
-  border: 25px solid #6e0000; /* cadre rouge foncé */
-  padding: 40px;
+  border: 40px solid #8B0000; /* ← CHANGEMENT : bordure plus épaisse */
+  padding: 50px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   background: #ffffff;
+  margin: 60px; /* ← AJOUT : marge pour créer l'effet cadre sur fond noir */
+  gap: 40px; /* ← AJOUT : espace entre les deux colonnes */
 }
 
 /* Grande image à gauche */
 .big-image {
-  width: 55%;
+  width: 50%; /* ← AJUSTEMENT : légèrement réduit */
+  flex-shrink: 0;
 }
 
 .big-image img {
@@ -276,16 +274,16 @@ footer {
 
 /* Miniatures à droite */
 .mini-gallery {
-  width: 38%;
+  width: 45%; /* ← AJUSTEMENT */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px; /* espace entre les mini images */
+  grid-template-columns: repeat(4, 1fr); /* ← CHANGEMENT : 4 colonnes au lieu de 3 */
+  gap: 15px; /* ← AJUSTEMENT : gap plus petit */
+  align-content: start;
 }
 
 .mini-gallery img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1; /* ← AJOUT : force les images à être carrées */
   object-fit: cover;
   display: block;
 }
-
