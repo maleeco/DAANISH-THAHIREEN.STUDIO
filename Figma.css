@@ -68,12 +68,17 @@ nav a:hover {
 /* Image principale */
 .hero {
   width: 100%;
-  height: 600px; /* ajustable */
-  background-image: url(image/image6.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Texte principal */
