@@ -262,29 +262,73 @@ align-items: flex-start;
 background: #ffffff;
 }
 
-/* Grande image à gauche */
+/* -------- GALERIE PRINCIPALE (FRAME 3) -------- */
+/* Styles par défaut pour toutes les galeries */
+.gallery-wrapper {
+  border: 25px solid #6e0000;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #ffffff;
+}
+
 .big-image {
-width: 90%;
+  width: 55%;
 }
 
 .big-image img {
-width: 100%;
-height: auto;
-object-fit: cover;
-display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
-/* Miniatures à droite */
 .mini-gallery {
-width: 38%;
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 25px; /* espace entre les mini images */
+  width: 38%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
 .mini-gallery img {
-width: 100%;
-height: auto;
-object-fit: cover;
-display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Styles spécifiques pour la galerie FRAME 3 uniquement */
+.gallery-wrapper.frame-gallery {
+  border: 40px solid #8B0000;
+  padding: 50px;
+  margin: 60px auto;
+  max-width: 1600px;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.gallery-wrapper.frame-gallery .big-image {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.gallery-wrapper.frame-gallery .big-image img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.gallery-wrapper.frame-gallery .mini-gallery {
+  width: 35%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(80px, auto);
+  gap: 12px;
+  align-content: start;
+}
+
+.gallery-wrapper.frame-gallery .mini-gallery img {
+  aspect-ratio: 1;
+  height: 100%;
+  border: 1px solid #e0e0e0;
 }
