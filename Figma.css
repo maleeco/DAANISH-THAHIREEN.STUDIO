@@ -262,30 +262,49 @@ align-items: flex-start;
 background: #ffffff;
 }
 
-* Grande image à gauche */
+/* -------- GALERIE PRINCIPALE (FRAME 3) -------- */
+.gallery-wrapper {
+  border: 40px solid #8B0000;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* ← CHANGEMENT : permet aux éléments de s'étirer */
+  background: #ffffff;
+  margin: 60px auto; /* ← AJOUT : centrage automatique */
+  max-width: 1600px; /* ← AJOUT : largeur maximale */
+  gap: 40px;
+}
+
+/* Grande image à gauche */
 .big-image {
-  width: 50%; /* ← AJUSTEMENT : légèrement réduit */
+  width: 60%; /* ← CHANGEMENT : plus large pour la grande image */
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .big-image img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain; /* ← CHANGEMENT : contient l'image entière */
   display: block;
 }
 
 /* Miniatures à droite */
 .mini-gallery {
-  width: 45%; /* ← AJUSTEMENT */
+  width: 35%; /* ← CHANGEMENT : ajusté */
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ← CHANGEMENT : 4 colonnes au lieu de 3 */
-  gap: 15px; /* ← AJUSTEMENT : gap plus petit */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(80px, auto); /* ← AJOUT : hauteur minimale pour les lignes */
+  gap: 12px; /* ← CHANGEMENT : gap optimisé */
   align-content: start;
+  align-items: start;
 }
 
 .mini-gallery img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
+  border: 1px solid #e0e0e0; /* ← AJOUT : légère bordure pour mieux voir */
 }
