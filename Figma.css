@@ -262,29 +262,30 @@ align-items: flex-start;
 background: #ffffff;
 }
 
-/* Grande image à gauche */
+* Grande image à gauche */
 .big-image {
-width: 90%;
+  width: 50%; /* ← AJUSTEMENT : légèrement réduit */
+  flex-shrink: 0;
 }
 
 .big-image img {
-width: 100%;
-height: auto;
-object-fit: cover;
-display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
 /* Miniatures à droite */
 .mini-gallery {
-width: 38%;
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 25px; /* espace entre les mini images */
+  width: 45%; /* ← AJUSTEMENT */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ← CHANGEMENT : 4 colonnes au lieu de 3 */
+  gap: 15px; /* ← AJUSTEMENT : gap plus petit */
+  align-content: start;
 }
 
 .mini-gallery img {
-width: 100%;
-height: auto;
-object-fit: cover;
-display: block;
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
