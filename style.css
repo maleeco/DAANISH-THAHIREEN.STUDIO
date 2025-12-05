@@ -8,6 +8,7 @@ body {
   font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #ffffff;
   color: #111;
+  scroll-behavior: smooth; /* Ajout pour le défilement fluide */
 }
 
 /* ========================================== */
@@ -237,10 +238,10 @@ nav a:hover {
 }
 
 .banner h1 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Modifié pour correspondre à .intro h2 */
   margin: 0 0 25px;
-  font-weight: 300;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 900; /* Modifié pour correspondre à .intro h2 */
+  font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Modifié pour correspondre à .intro h2 */
 }
 
 .banner p {
@@ -379,6 +380,30 @@ nav a:hover {
 .column a:hover {
   color: #000;
   text-decoration: underline;
+}
+
+/* ========================================== */
+/* SECTION CONTACT */
+/* ========================================== */
+.contact {
+  padding: 80px 40px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.contact p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* ========================================== */
