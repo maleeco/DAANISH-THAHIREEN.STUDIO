@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daanish Thahireen</title>
+<title>Daanish Thahireen - Photographe</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -163,7 +162,7 @@ les prends.
 <!-- ============================================ -->
 <!-- NEWSLETTER -->
 <!-- ============================================ -->
-<section class="newsletter">
+<section id="contact" class="newsletter">
 <h2>RESTEZ INFORMÉ</h2>
 <form class="newsletter-form" id="newsletterForm">
 <div class="form-group">
@@ -239,42 +238,10 @@ nouvelles séries, expositions, tirages disponibles. Vous pouvez vous désabonne
 </div>
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Récupérer l'image principale
-    const mainImage = document.querySelector('#galerie .main-photo img');
-    
-    // Récupérer toutes les images de la galerie
-    const galleryImages = document.querySelectorAll('#galerie .gallery-item img');
-    
-    // Ajouter un événement de clic sur chaque image de la galerie
-    galleryImages.forEach(function(img) {
-        img.style.cursor = 'pointer';
-        
-        img.addEventListener('click', function() {
-            mainImage.src = this.src;
-        });
-    });
-});
+<!-- ============================================ -->
+<!-- LIEN VERS LE FICHIER JAVASCRIPT -->
+<!-- ============================================ -->
+<script src="script.js"></script>
 
-// Gestion du formulaire newsletter
-document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const emailInput = document.getElementById('emailInput');
-    const successMessage = document.getElementById('successMessage');
-    
-    if (emailInput.value && emailInput.validity.valid) {
-        successMessage.classList.add('show');
-        emailInput.value = '';
-        
-        setTimeout(() => {
-            successMessage.classList.remove('show');
-        }, 5000);
-        
-        console.log('Email inscrit avec succès');
-    }
-});
-</script>
 </body>
 </html>
