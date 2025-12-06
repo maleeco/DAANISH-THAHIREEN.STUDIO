@@ -105,6 +105,87 @@ function initNewsletterForm() {
             alert('Veuillez entrer une adresse e-mail valide.');
         }
     });
+    // ============================================
+// FONCTION : Navigation smooth scroll
+// ============================================
+function initSmoothScroll() {
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    console.log('✓ Smooth scroll initialisé');
+}
+
+// ============================================
+// FONCTION : Animations au scroll (optionnel)
+// ============================================
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observer les sections pour les animations
+    const sections = document.querySelectorAll('.intro, .container, .banner, .newsletter');
+    
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+    });
+    
+    console.log('✓ Animations au scroll initialisées');
+}
+
+// ============================================
+// FONCTION : Envoyer email au backend (exemple)
+// ============================================
+function sendToBackend(email) {
+    // Exemple d'envoi à un backend
+    // À adapter selon votre configuration
+    
+    /*
+    fetch('https://votre-api.com/newsletter', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+    */
+}
+
     
     console.log('✓ Formulaire newsletter initialisé');
 }
