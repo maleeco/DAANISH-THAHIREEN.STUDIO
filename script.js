@@ -25,3 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     initScrollAnimations();
 });
+// ============================================
+// FONCTION : Galerie interactive
+// ============================================
+function initGallery() {
+    const mainImage = document.querySelector('#galerie .main-photo img');
+    const galleryImages = document.querySelectorAll('#galerie .gallery-item img');
+    
+    if (!mainImage || galleryImages.length === 0) {
+        console.warn('Galerie non trouvée');
+        return;
+    }
