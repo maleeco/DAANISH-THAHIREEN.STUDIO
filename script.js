@@ -53,3 +53,15 @@ function initGallery() {
                 mainImage.style.opacity = '1';
             }, 200);
         });
+        / Effet hover (optionnel)
+        img.addEventListener('mouseenter', function() {
+            this.style.opacity = '0.7';
+        });
+        
+        img.addEventListener('mouseleave', function() {
+            this.style.opacity = '1';
+        });
+    });
+    
+    console.log('✓ Galerie initialisée avec succès');
+}
