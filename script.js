@@ -65,3 +65,47 @@ function initGallery() {
     
     console.log('✓ Galerie initialisée avec succès');
 }
+// ============================================
+// FONCTION : Formulaire Newsletter
+// ============================================
+function initNewsletterForm() {
+    const form = document.getElementById('newsletterForm');
+    const emailInput = document.getElementById('emailInput');
+    const successMessage = document.getElementById('successMessage');
+    
+    if (!form) {
+        console.warn('Formulaire newsletter non trouvé');
+        return;
+    }
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Vérifier la validité de l'email
+        if (emailInput.value && emailInput.validity.valid) {
+            // Afficher le message de succès
+            successMessage.classList.add('show');
+            
+            // Enregistrer l'email (à adapter selon vos besoins)
+            const email = emailInput.value;
+            console.log('Nouvel abonné :', email);
+            
+            // Optionnel : Envoyer à un service backend
+            // sendToBackend(email);
+            
+            // Vider le champ
+            emailInput.value = '';
+            
+            // Masquer le message après 5 secondes
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        } else {
+            // Afficher une erreur si l'email n'est pas valide
+            alert('Veuillez entrer une adresse e-mail valide.');
+        }
+    });
+    
+    console.log('✓ Formulaire newsletter initialisé');
+}
+
