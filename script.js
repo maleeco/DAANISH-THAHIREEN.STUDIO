@@ -36,3 +36,20 @@ function initGallery() {
         console.warn('Galerie non trouvée');
         return;
     }
+// Stocker l'image principale par défaut
+    const defaultMainImage = mainImage.src;
+    
+    // Ajouter un événement de clic sur chaque image de la galerie
+    galleryImages.forEach(function(img) {
+        img.style.cursor = 'pointer';
+        
+        // Changer l'image principale au clic
+        img.addEventListener('click', function() {
+            // Effet de transition
+            mainImage.style.opacity = '0.3';
+            
+            setTimeout(() => {
+                mainImage.src = this.src;
+                mainImage.style.opacity = '1';
+            }, 200);
+        });
