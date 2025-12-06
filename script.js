@@ -4,7 +4,7 @@
 
 // Attendre que le DOM soit complètement chargé
 document.addEventListener('DOMContentLoaded', function() {
-
+    
     // ============================================
     // GALERIE INTERACTIVE
     // ============================================
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     initScrollAnimations();
 });
+
 // ============================================
 // FONCTION : Galerie interactive
 // ============================================
@@ -36,7 +37,8 @@ function initGallery() {
         console.warn('Galerie non trouvée');
         return;
     }
-// Stocker l'image principale par défaut
+    
+    // Stocker l'image principale par défaut
     const defaultMainImage = mainImage.src;
     
     // Ajouter un événement de clic sur chaque image de la galerie
@@ -53,7 +55,8 @@ function initGallery() {
                 mainImage.style.opacity = '1';
             }, 200);
         });
-        / Effet hover (optionnel)
+        
+        // Effet hover (optionnel)
         img.addEventListener('mouseenter', function() {
             this.style.opacity = '0.7';
         });
@@ -65,6 +68,7 @@ function initGallery() {
     
     console.log('✓ Galerie initialisée avec succès');
 }
+
 // ============================================
 // FONCTION : Formulaire Newsletter
 // ============================================
@@ -105,7 +109,11 @@ function initNewsletterForm() {
             alert('Veuillez entrer une adresse e-mail valide.');
         }
     });
-    // ============================================
+    
+    console.log('✓ Formulaire newsletter initialisé');
+}
+
+// ============================================
 // FONCTION : Navigation smooth scroll
 // ============================================
 function initSmoothScroll() {
@@ -186,7 +194,36 @@ function sendToBackend(email) {
     */
 }
 
-    
-    console.log('✓ Formulaire newsletter initialisé');
+// ============================================
+// GESTION DU MENU MOBILE (optionnel)
+// ============================================
+function initMobileMenu() {
+    // À ajouter si vous souhaitez un menu burger pour mobile
+    // Code pour toggle le menu sur petits écrans
 }
 
+// ============================================
+// LAZY LOADING DES IMAGES (optionnel)
+// ============================================
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// ============================================
+// LOG DE DÉMARRAGE
+// ============================================
+console.log('🎨 Portfolio Daanish Thahireen chargé');
+console.log('📸 Toutes les fonctionnalités sont actives');
