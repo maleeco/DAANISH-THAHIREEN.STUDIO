@@ -8,6 +8,7 @@ body {
   font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #ffffff;
   color: #111;
+  overflow-x: hidden; /* Évite le débordement horizontal */
 }
 
 /* ========================================== */
@@ -21,6 +22,7 @@ header {
 
 .logo {
   height: 90px;
+  max-width: 90%; /* Limite sur mobile */
   object-fit: contain;
 }
 
@@ -37,6 +39,7 @@ nav ul {
   list-style: none;
   display: inline-flex;
   gap: 120px;
+  flex-wrap: wrap; /* Permet le passage à la ligne */
 }
 
 nav a {
@@ -166,7 +169,7 @@ nav a:hover {
   background-color: white;
   padding: 0;
   display: flex;
-  gap: 10;
+  gap: 10px;
   max-width: 100%;
   margin: 0;
 }
@@ -179,7 +182,7 @@ nav a:hover {
 }
 
 #galerie .main-photo img {
-  width: 103%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -211,46 +214,6 @@ nav a:hover {
 
 #galerie .gallery-item.empty {
   background-color: transparent;
-}
-
-/* Version mobile */
-@media (max-width: 968px) {
-  #galerie .gallery-container {
-      flex-direction: column;
-      border-width: 15px;
-  }
-  
-  #galerie .main-photo {
-      flex: none;
-      max-width: 97%;
-      padding: 20px;
-  }
-  
-  #galerie .gallery-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      padding: 20px;
-  }
-  
-  #galerie .gallery-item.empty {
-      display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  #galerie .gallery-container {
-      border-width: 10px;
-  }
-  
-  #galerie .main-photo {
-      padding: 15px;
-  }
-  
-  #galerie .gallery-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      padding: 15px;
-  }
 }
 
 /* ========================================== */
@@ -454,8 +417,41 @@ footer {
 /* RESPONSIVE */
 /* ========================================== */
 
-/* Galerie Mobile */
+/* Tablettes et petits écrans */
 @media (max-width: 968px) {
+  /* Logo */
+  .logo {
+    height: 70px;
+  }
+  
+  /* Navigation */
+  nav ul {
+    gap: 50px;
+  }
+  
+  nav a {
+    font-size: 1.2rem;
+  }
+  
+  /* Hero */
+  .hero {
+    height: 400px;
+  }
+  
+  /* Intro */
+  .intro {
+    padding: 30px 40px;
+  }
+  
+  .intro h2 {
+    font-size: 1.6rem;
+  }
+  
+  .intro p {
+    font-size: 1rem;
+  }
+  
+  /* Galerie Mobile */
   #galerie .gallery-container {
     flex-direction: column;
     border-width: 15px;
@@ -467,8 +463,12 @@ footer {
     padding: 20px;
   }
   
+  #galerie .main-photo img {
+    width: 100%;
+  }
+  
   #galerie .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     padding: 20px;
   }
@@ -478,20 +478,47 @@ footer {
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+  /* Logo */
+  .logo {
+    height: 60px;
+    max-width: 80%;
+  }
+  
   /* Navigation */
   nav ul {
-    gap: 40px;
+    gap: 30px;
+    padding: 0 10px;
   }
   
   nav a {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+  
+  /* Hero */
+  .hero {
+    height: 300px;
+  }
+  
+  /* Intro */
+  .intro {
+    padding: 25px 20px;
+  }
+  
+  .intro h2 {
+    font-size: 1.4rem;
+  }
+  
+  .intro p {
+    font-size: 0.95rem;
   }
   
   /* Container */
   .container {
     flex-direction: column;
-    padding: 40px 30px;
+    padding: 40px 20px;
+    gap: 30px;
   }
   
   .text-block, .image-block {
@@ -499,22 +526,49 @@ footer {
     padding-right: 0;
   }
   
+  .text-block {
+    font-size: 16px;
+  }
+  
+  .image-block img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+  
+  /* Footer Section */
+  .footer {
+    padding: 30px 20px;
+  }
+  
+  .footer h2 {
+    font-size: 24px;
+  }
+  
+  .footer p {
+    font-size: 14px;
+  }
+  
   /* Bannière */
   .banner {
-    padding: 60px 30px;
+    padding: 40px 20px;
   }
   
   .banner h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+  }
+  
+  .banner p {
+    font-size: 0.9rem;
   }
   
   /* Newsletter */
   .newsletter {
-    padding: 60px 30px;
+    padding: 50px 20px;
   }
   
   .newsletter h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
   }
   
   .newsletter-form {
@@ -523,15 +577,14 @@ footer {
   }
   
   .newsletter-form button {
-    width: auto;
-    align-self: flex-start;
+    width: 100%;
   }
   
   /* Links */
   .links {
     flex-direction: column;
-    gap: 50px;
-    padding: 60px 30px;
+    gap: 40px;
+    padding: 50px 20px;
   }
   
   .column {
@@ -540,7 +593,8 @@ footer {
   
   /* Footer */
   .socials {
-    gap: 40px;
+    gap: 30px;
+    padding: 0 20px;
   }
   
   .socials a {
@@ -554,7 +608,51 @@ footer {
   }
 }
 
+/* Petits mobiles */
 @media (max-width: 600px) {
+  /* Logo */
+  .logo {
+    height: 50px;
+  }
+  
+  /* Navigation */
+  nav ul {
+    gap: 20px;
+    flex-direction: column;
+  }
+  
+  nav a {
+    font-size: 1.1rem;
+  }
+  
+  /* Hero */
+  .hero {
+    height: 250px;
+  }
+  
+  /* Intro */
+  .intro {
+    padding: 20px 15px;
+  }
+  
+  .intro h2 {
+    font-size: 1.2rem;
+  }
+  
+  .intro p {
+    font-size: 0.9rem;
+  }
+  
+  /* Container */
+  .container {
+    padding: 30px 15px;
+  }
+  
+  .text-block {
+    font-size: 15px;
+  }
+  
+  /* Galerie */
   #galerie .gallery-container {
     border-width: 10px;
   }
@@ -567,5 +665,47 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 6px;
     padding: 15px;
+  }
+  
+  /* Bannière */
+  .banner {
+    padding: 30px 15px;
+  }
+  
+  .banner h1 {
+    font-size: 1.3rem;
+  }
+  
+  /* Newsletter */
+  .newsletter {
+    padding: 40px 15px;
+  }
+  
+  .newsletter h2 {
+    font-size: 1.4rem;
+  }
+  
+  /* Links */
+  .links {
+    padding: 40px 15px;
+  }
+  
+  /* Footer */
+  footer {
+    margin-bottom: 40px;
+  }
+  
+  .socials {
+    gap: 25px;
+  }
+  
+  .socials a {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-icon {
+    width: 20px;
+    height: 20px;
   }
 }
