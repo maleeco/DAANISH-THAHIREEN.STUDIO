@@ -99,7 +99,7 @@ nav a:hover {
   justify-content: space-between;
   align-items: stretch;
   padding: 60px 80px;
-  background-color: #f5f5f0;
+  background-color: #ffffff;
   gap: 60px;
 }
 
@@ -479,8 +479,11 @@ footer {
   }
   
   nav ul {
-    gap: 15px;
+    gap: 10px;
     padding: 0 10px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
   }
   
   nav a {
@@ -513,7 +516,8 @@ footer {
   .text-block {
     width: 50%;
     padding-right: 0;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.5;
   }
   
   .image-block {
@@ -540,7 +544,7 @@ footer {
   }
   
   .banner {
-    padding: 20px 20px;
+    padding: 15px 20px;
   }
   
   .banner h1 {
@@ -571,8 +575,18 @@ footer {
   
   .links {
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 50px 20px;
+    gap: 15px;
+    padding: 50px 15px;
+  }
+  
+  .column h3 {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+  
+  .column a {
+    font-size: 0.7rem;
+    margin: 4px 0;
   }
   
   .column {
@@ -632,8 +646,9 @@ footer {
   }
   
   .text-block {
-    font-size: 13px;
+    font-size: 11px;
     width: 50%;
+    line-height: 1.4;
   }
   
   .image-block {
@@ -655,7 +670,7 @@ footer {
   }
   
   .banner {
-    padding: 20px 15px;
+    padding: 15px 15px;
   }
   
   .banner h1 {
@@ -673,16 +688,19 @@ footer {
   
   .links {
     grid-template-columns: repeat(3, 1fr);
-    padding: 40px 15px;
-    gap: 20px;
+    padding: 40px 10px;
+    gap: 10px;
   }
   
   .column h3 {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
   }
   
   .column a {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
+    margin: 3px 0;
   }
   
   footer {
