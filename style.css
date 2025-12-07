@@ -40,6 +40,7 @@ nav ul {
   display: inline-flex;
   gap: 120px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav a {
@@ -98,7 +99,7 @@ nav a:hover {
   justify-content: space-between;
   align-items: stretch;
   padding: 60px 80px;
-  background-color: #ffffff;
+  background-color: #f5f5f0;
   gap: 60px;
 }
 
@@ -222,7 +223,7 @@ nav a:hover {
 .banner {
   background: #7c7d58;
   color: #ffffff;
-  padding: 50px 40px;
+  padding: 30px 40px;
   margin-bottom: 0;
 }
 
@@ -333,11 +334,10 @@ nav a:hover {
 /* LIENS (COLONNES) */
 /* ========================================== */
 .links {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   padding: 100px 40px;
   text-align: left;
-  flex-wrap: wrap;
   gap: 60px;
   background: #f5f5f0;
   margin-bottom: 0;
@@ -479,7 +479,7 @@ footer {
   }
   
   nav ul {
-    gap: 30px;
+    gap: 15px;
     padding: 0 10px;
   }
   
@@ -504,18 +504,20 @@ footer {
   }
   
   .container {
-    flex-direction: column;
+    flex-direction: row;
     padding: 40px 20px;
-    gap: 30px;
-  }
-  
-  .text-block, .image-block {
-    width: 100%;
-    padding-right: 0;
+    gap: 20px;
+    align-items: center;
   }
   
   .text-block {
-    font-size: 16px;
+    width: 50%;
+    padding-right: 0;
+    font-size: 14px;
+  }
+  
+  .image-block {
+    width: 50%;
   }
   
   .image-block img {
@@ -538,7 +540,7 @@ footer {
   }
   
   .banner {
-    padding: 30px 20px;
+    padding: 20px 20px;
   }
   
   .banner h1 {
@@ -568,8 +570,8 @@ footer {
   }
   
   .links {
-    flex-direction: column;
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     padding: 50px 20px;
   }
   
@@ -599,12 +601,12 @@ footer {
   }
   
   nav ul {
-    gap: 20px;
-    flex-direction: column;
+    gap: 10px;
+    padding: 5px 10px;
   }
   
   nav a {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
   
   .hero {
@@ -624,11 +626,18 @@ footer {
   }
   
   .container {
+    flex-direction: row;
     padding: 30px 15px;
+    gap: 15px;
   }
   
   .text-block {
-    font-size: 15px;
+    font-size: 13px;
+    width: 50%;
+  }
+  
+  .image-block {
+    width: 50%;
   }
   
   #galerie .gallery-container {
@@ -646,7 +655,7 @@ footer {
   }
   
   .banner {
-    padding: 25px 15px;
+    padding: 20px 15px;
   }
   
   .banner h1 {
@@ -663,7 +672,17 @@ footer {
   }
   
   .links {
+    grid-template-columns: repeat(3, 1fr);
     padding: 40px 15px;
+    gap: 20px;
+  }
+  
+  .column h3 {
+    font-size: 0.85rem;
+  }
+  
+  .column a {
+    font-size: 0.8rem;
   }
   
   footer {
